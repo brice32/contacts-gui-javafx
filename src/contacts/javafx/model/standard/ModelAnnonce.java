@@ -10,6 +10,9 @@ import contacts.commun.service.IServiceAnnonceur;
 import contacts.commun.util.ExceptionAppli;
 import contacts.javafx.fxb.FXAnnonce;
 import contacts.javafx.fxb.FXAnnonceur;
+import contacts.javafx.fxb.FXCategorie;
+import contacts.javafx.fxb.FXRubrique;
+import contacts.javafx.fxb.FXZone;
 import contacts.javafx.model.EnumModeVue;
 import contacts.javafx.model.IModelAnnonce;
 import contacts.javafx.util.mapper.IMapperDtoFX;
@@ -35,10 +38,10 @@ public class ModelAnnonce implements IModelAnnonce {
 		annonces.clear();
 		for (DtoAnnonce dto : serviceAnnonce.listerTout()){
 			FXAnnonce annonce = mapper.map(dto);
-			mapper.update(mapper.map(dto.getAnnonceur()), annonce.getFxannonceur());
-			mapper.update(mapper.map(dto.getRubrique()), annonce.getFxrubrique());
-			mapper.update(mapper.map(dto.getZone()), annonce.getFxzone());
-			mapper.update(mapper.map(dto.getCategorie()), annonce.getFxcategorie());
+			mapper.update(mapper.map(dto.getAnnonceur()), annonce.getAnnonceur());
+			mapper.update(mapper.map(dto.getRubrique()), annonce.getRubrique());
+			mapper.update(mapper.map(dto.getZone()), annonce.getZone());
+			mapper.update(mapper.map(dto.getCategorie()), annonce.getCategorie());
 			annonces.add(annonce);
 		}
 	}
@@ -66,10 +69,10 @@ public class ModelAnnonce implements IModelAnnonce {
 		modeVue = MODIFIER;
 		annonceCourant = annonce;
 		mapper.update(annonce, annonceVue);
-		mapper.update(annonce.getFxannonceur(), annonceVue.getFxannonceur());
-		mapper.update(annonce.getFxcategorie(), annonceVue.getFxcategorie());
-		mapper.update(annonce.getFxrubrique(), annonceVue.getFxrubrique());
-		mapper.update(annonce.getFxzone(), annonceVue.getFxzone());
+		mapper.update(annonce.getAnnonceur(), annonceVue.getAnnonceur());
+		mapper.update(annonce.getCategorie(), annonceVue.getCategorie());
+		mapper.update(annonce.getRubrique(), annonceVue.getRubrique());
+		mapper.update(annonce.getZone(), annonceVue.getZone());
 	}
 
 	@Override
@@ -82,18 +85,50 @@ public class ModelAnnonce implements IModelAnnonce {
 
 		// Crée un objet contenant le données pour la mise à jour
 		DtoAnnonce dto = mapper.map(annonceVue);
+		dto.setAnnonceur(mapper.map(annonceVue).getAnnonceur());
+		dto.setCategorie(mapper.map(annonceVue).getCategorie());
+		dto.setRubrique(mapper.map(annonceVue).getRubrique());
+		dto.setZone(mapper.map(annonceVue).getZone());
 
 		// Effectue la mise à jour
 		if (modeVue == CREER) {
 			int id = serviceAnnonce.inserer(dto);
-			annonceVue.setId(id);
+			annonceVue.setIdAnnonce(id);
 			annonceCourant = mapper.update(annonceVue, new FXAnnonce());
+			mapper.update(annonceVue.getAnnonceur(), annonceCourant.getAnnonceur());
+			mapper.update(annonceVue.getCategorie(), annonceCourant.getCategorie());
+			mapper.update(annonceVue.getRubrique(), annonceCourant.getRubrique());
+			mapper.update(annonceVue.getZone(), annonceCourant.getZone());
 			annonces.add(annonceCourant);
 		}
 		if (modeVue == MODIFIER) {
 			serviceAnnonce.modifier(dto);
 			mapper.update(annonceVue, annonceCourant);
+			mapper.update(annonceVue.getAnnonceur(), annonceCourant.getAnnonceur());
+			mapper.update(annonceVue.getCategorie(), annonceCourant.getCategorie());
+			mapper.update(annonceVue.getRubrique(), annonceCourant.getRubrique());
+			mapper.update(annonceVue.getZone(), annonceCourant.getZone());
 		}
+	}
+
+	@Override
+	public void mettreVueAnnonceur(FXAnnonceur annonceur){
+		mapper.update(annonceur, annonceVue.getAnnonceur());
+	}
+
+	@Override
+	public void mettreVueCategorie(FXCategorie categorie){
+		mapper.update(categorie, annonceVue.getCategorie());
+	}
+
+	@Override
+	public void mettreVueRubrique(FXRubrique rubrique){
+		mapper.update(rubrique, annonceVue.getRubrique());
+	}
+
+	@Override
+	public void mettreVueZone(FXZone zone){
+		mapper.update(zone, annonceVue.getZone());
 	}
 
 	public void setMapper(IMapperDtoFX mapper) {

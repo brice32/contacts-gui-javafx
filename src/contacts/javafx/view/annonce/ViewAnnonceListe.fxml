@@ -32,9 +32,9 @@
       <HBox alignment="CENTER" layoutX="154.0" layoutY="531.0" prefHeight="40.0" prefWidth="513.0" spacing="10.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="133.0">
          <children>
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Creer" />
-            <Button mnemonicParsing="false" onAction="#doModifier" prefHeight="40.0" prefWidth="120.0" text="Modifier" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Supprimer" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Réviser" />
+            <Button fx:id="modifierButton" disable="true" mnemonicParsing="false" onAction="#doModifier" prefHeight="40.0" prefWidth="120.0" text="Modifier" />
+            <Button fx:id="supprimerButton" disable="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Supprimer" />
+            <Button fx:id="reviserButton" disable="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Réviser" />
          </children>
       </HBox>
    </children>

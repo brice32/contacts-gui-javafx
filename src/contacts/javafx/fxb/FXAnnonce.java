@@ -37,10 +37,10 @@ public class FXAnnonce {
 	private final StringProperty organisateurEmail			= new SimpleStringProperty();
 	private final StringProperty organisateurTelephone		= new SimpleStringProperty();
 
-	private final FXAnnonceur	fxannonceur			= new FXAnnonceur();
-	private final FXCategorie   fxcategorie         = new FXCategorie();
-	private final FXRubrique	fxrubrique			= new FXRubrique();
-	private final FXZone		fxzone				= new FXZone();
+	private final FXAnnonceur	annonceur			= new FXAnnonceur();
+	private final FXCategorie   categorie         = new FXCategorie();
+	private final FXRubrique	rubrique			= new FXRubrique();
+	private final FXZone		zone				= new FXZone();
 
 	//get & set
 	public final IntegerProperty idAnnonceProperty() {
@@ -215,17 +215,22 @@ public class FXAnnonce {
 		return dateDebut.getValue();
 	}
 
-	public final Date getDateDebut(){
-		LocalDate localdate = dateDebut.getValue();
-//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MMMM-dd");
-//		String formattedString = localdate.format(formatter);
-		Date date = new Date(localdate.getYear(),localdate.getMonthValue(),localdate.getDayOfMonth());
-		return date;
+	public final void setDateDebutLD(LocalDate dateDebutLD) {
+		dateDebut.setValue(dateDebutLD);
 	}
 
-	public final void setDateDebut(final Date dateDebut){
-		LocalDate ld = new java.sql.Date(dateDebut.getTime()).toLocalDate();
-		this.dateDebut.setValue(ld);
+	public final Date getDateDebut(){
+//		LocalDate localdate = dateDebut.getValue();
+////		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MMMM-dd");
+////		String formattedString = localdate.format(formatter);
+//		Date date = new Date(localdate.getYear(),localdate.getMonthValue(),localdate.getDayOfMonth());
+//		return date;
+		return java.sql.Date.valueOf(dateDebut.getValue());
+	}
+
+	public final void setDateDebut(final Date dateDebut2){
+		LocalDate ld = new java.sql.Date(dateDebut2.getTime()).toLocalDate();
+		dateDebut.setValue(ld);
 	}
 
 	public final JFXDatePicker getDateDebutJFX(){
@@ -239,6 +244,10 @@ public class FXAnnonce {
 
 	public final LocalDate	getDateFinLD(){
 		return dateFin.getValue();
+	}
+
+	public final void	setDateFinLD(LocalDate dateFinLD){
+		dateFin.setValue(dateFinLD);
 	}
 
 	public final JFXDatePicker getDateFinJFX(){
@@ -255,6 +264,10 @@ public class FXAnnonce {
 
 	public final LocalTime getHeureDebutLD(){
 		return heureDebut.getValue();
+	}
+
+	public final void setHeureDebutLD(LocalTime heureDebutLD){
+		heureDebut.setValue(heureDebutLD);
 	}
 
 	public final void setHeureDebut(final Time heureDebut2){
@@ -274,6 +287,10 @@ public class FXAnnonce {
 		return	heureFin.getValue();
 	}
 
+	public final void	setHeureFinLD(LocalTime heureFinLD){
+		heureFin.setValue(heureFinLD);
+	}
+
 	public final Time getHeureFin(){
 		return java.sql.Time.valueOf(heureFin.getValue());
 	}
@@ -287,20 +304,20 @@ public class FXAnnonce {
 
 
 
-	public FXAnnonceur getFxannonceur() {
-		return fxannonceur;
+	public FXAnnonceur getAnnonceur() {
+		return annonceur;
 	}
 
-	public FXRubrique getFxrubrique() {
-		return fxrubrique;
+	public FXRubrique getRubrique() {
+		return rubrique;
 	}
 
-	public FXZone getFxzone() {
-		return fxzone;
+	public FXZone getZone() {
+		return zone;
 	}
 
-	public FXCategorie getFxcategorie() {
-		return fxcategorie;
+	public FXCategorie getCategorie() {
+		return categorie;
 	}
 
 

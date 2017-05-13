@@ -22,6 +22,7 @@ import contacts.javafx.fxb.FXZone;
 import contacts.javafx.model.IModelAnnonce;
 import contacts.javafx.model.IModelAnnonceur;
 import contacts.javafx.model.IModelCategorie;
+import contacts.javafx.model.IModelConnexion;
 import contacts.javafx.model.IModelRubrique;
 import contacts.javafx.model.IModelZone;
 import contacts.javafx.model.standard.ModelRubrique;
@@ -41,6 +42,8 @@ public class ControllerAnnonceForm implements IController {
 	private IModelRubrique  modelRubrique;
 
 	private IModelZone 		modelZone;
+
+	private IModelConnexion modelConnexion;
 
 	private FXAnnonce 	annonceVue;
 
@@ -112,24 +115,25 @@ public class ControllerAnnonceForm implements IController {
 		modelCategorie.actualiserListe();
 		modelZone	= 	managerGui.getModel(IModelZone.class);
 		modelZone.actualiserListe();
+		modelConnexion = managerGui.getModel(IModelConnexion.class);
 
 		annonceVue = modelAnnonce.getAnnonceVue();
 
 
-		textFieldTitre.textProperty().bind(annonceVue.titreProperty());
-		textAreaDescription.textProperty().bind(annonceVue.descriptionProperty());
+		textFieldTitre.textProperty().bindBidirectional(annonceVue.titreProperty());
+		textAreaDescription.textProperty().bindBidirectional(annonceVue.descriptionProperty());
 		dateDebutDatePicker.setValue(annonceVue.getDateDebutLD());
 		dateFinDatePicker.setValue(annonceVue.getDateFinLD());
 		heureDebutPicker.setValue(annonceVue.getHeureDebutLD());
 		heureFinPicker.setValue(annonceVue.getHeureFinLD());
-		lieuNomTextField.textProperty().bind(annonceVue.lieuNomProperty());
-		lieuAdresseTextField.textProperty().bind(annonceVue.lieuAdresseProperty());
-		lieuCpTextField.textProperty().bind(annonceVue.lieuCpProperty());
-		lieuVilleTextField.textProperty().bind(annonceVue.lieuVilleProperty());
-		organisateurNomTextField.textProperty().bind(annonceVue.organisateurNomProperty());
-		organisateurSiteWebTextField.textProperty().bind(annonceVue.organisateurSiteWebProperty());
-		organisateurEmailTextField.textProperty().bind(annonceVue.organisateurEmailProperty());
-		organisateurTelephoneTextField.textProperty().bind(annonceVue.organisateurTelephoneProperty());
+		lieuNomTextField.textProperty().bindBidirectional(annonceVue.lieuNomProperty());
+		lieuAdresseTextField.textProperty().bindBidirectional(annonceVue.lieuAdresseProperty());
+		lieuCpTextField.textProperty().bindBidirectional(annonceVue.lieuCpProperty());
+		lieuVilleTextField.textProperty().bindBidirectional(annonceVue.lieuVilleProperty());
+		organisateurNomTextField.textProperty().bindBidirectional(annonceVue.organisateurNomProperty());
+		organisateurSiteWebTextField.textProperty().bindBidirectional(annonceVue.organisateurSiteWebProperty());
+		organisateurEmailTextField.textProperty().bindBidirectional(annonceVue.organisateurEmailProperty());
+		organisateurTelephoneTextField.textProperty().bindBidirectional(annonceVue.organisateurTelephoneProperty());
 
 		comboBoxAnnonceur.setItems(modelAnnonceur.getAnnonceurs());
 		comboBoxCategorie.setItems(modelCategorie.getCategories());
@@ -148,13 +152,13 @@ public class ControllerAnnonceForm implements IController {
 
 		try{
 		int id;
-		id=modelAnnonceur.numbreAnnonceur(annonceVue.getFxannonceur());
+		id=modelAnnonceur.numbreAnnonceur(annonceVue.getAnnonceur());
 		comboBoxAnnonceur.getSelectionModel().select(modelAnnonceur.getAnnonceurs().get(id));
-		id=modelCategorie.numbreCategorie(annonceVue.getFxcategorie());
+		id=modelCategorie.numbreCategorie(annonceVue.getCategorie());
 		comboBoxCategorie.getSelectionModel().select(modelCategorie.getCategories().get(id));
-		id=modelRubrique.numbreRubrique(annonceVue.getFxrubrique());
+		id=modelRubrique.numbreRubrique(annonceVue.getRubrique());
 		comboBoxRubrique.getSelectionModel().select(modelRubrique.getRubriques().get(id));
-		id=modelZone.numbreZone(annonceVue.getFxzone());
+		id=modelZone.numbreZone(annonceVue.getZone());
 		comboxZone.getSelectionModel().select(modelZone.getZones().get(id));
 		}catch (Exception e) {
 			System.out.println("erreu dans ControllerAnnonce. numbreAnnonceur/numbreCategorie/numbreRubrique/numbreZone");
@@ -207,6 +211,16 @@ public class ControllerAnnonceForm implements IController {
 	@FXML
 	private void doOk(){
 		try {
+			annonceVue.setDateDebutLD(dateDebutDatePicker.getValue());
+			annonceVue.setDateFinLD(dateFinDatePicker.getValue());
+			annonceVue.setHeureDebutLD(heureDebutPicker.getValue());
+			annonceVue.setHeureFinLD(heureFinPicker.getValue());
+			annonceVue.setAnimateurNom(modelConnexion.getCompteConnecte().getNom()+" "+modelConnexion.getCompteConnecte().getPrenom());
+			annonceVue.setAnimateurQualification(modelConnexion.getCompteConnecte().getRoles().toString());
+			modelAnnonce.mettreVueAnnonceur(comboBoxAnnonceur.getSelectionModel().getSelectedItem());
+			modelAnnonce.mettreVueCategorie(comboBoxCategorie.getSelectionModel().getSelectedItem());
+			modelAnnonce.mettreVueRubrique(comboBoxRubrique.getSelectionModel().getSelectedItem());
+			modelAnnonce.mettreVueZone(comboxZone.getSelectionModel().getSelectedItem());
 			modelAnnonce.ValiderMiseAJour();
 			managerGui.showView( EnumView.AnnonceListe );;
 		} catch (Exception e) {
