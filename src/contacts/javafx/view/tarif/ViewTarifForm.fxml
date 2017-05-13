@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.tarif.ControllerTarifForm">
+   <children>
+      <HBox layoutX="93.0" layoutY="52.0" prefHeight="277.0" prefWidth="449.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <GridPane prefHeight="153.0" prefWidth="441.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="131.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="318.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Date" />
+                  <Label text="TarifConference" GridPane.rowIndex="1" />
+                  <Label text="TarifRelief" GridPane.rowIndex="2" />
+                  <Label text="TarifStage" GridPane.rowIndex="3" />
+                  <TextField fx:id="TextFieldDate" prefHeight="25.0" prefWidth="255.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="TextFiedTarifConference" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="TextFieldTarifReief" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="TextFiedTarifStage" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="17.0" prefHeight="26.0" prefWidth="138.0" text="Tarifs form" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="17.0" />
+      <HBox alignment="CENTER" layoutX="118.0" layoutY="300.0" prefHeight="100.0" prefWidth="408.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="300.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doValider" text="Valider">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#DoAnnuler" text="annuler">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

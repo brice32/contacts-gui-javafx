@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.annonceur.ControllerAnnonceurListe">
+   <children>
+      <TableView fx:id="tableViewAnnonceur" layoutX="24.0" layoutY="147.0" prefHeight="326.0" prefWidth="347.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="147.0">
+         <columns>
+            <TableColumn fx:id="nomColumn" prefWidth="133.0" text="Nom" />
+            <TableColumn fx:id="emailColumn" prefWidth="213.0" text="Email" />
+         </columns>
+      </TableView>
+      <ScrollPane layoutX="380.0" layoutY="147.0" prefHeight="326.0" prefWidth="409.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="147.0">
+         <content>
+            <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="1100.0" styleClass="background">
+               <children>
+                  <Label text="idAnnonceur" GridPane.rowIndex="1" />
+                  <Label text="nom" GridPane.rowIndex="2" />
+                  <Label text="telephone" GridPane.rowIndex="3" />
+                  <Label text="email" GridPane.rowIndex="4" />
+                  <Label text="lieuNom" GridPane.rowIndex="5" />
+                  <Label text="lieuAdresse" GridPane.rowIndex="6" />
+                  <Label text="lieuCp" GridPane.rowIndex="7" />
+                  <Label text="lieuVille" GridPane.rowIndex="8" />
+                  <Label text="siteWeb" GridPane.rowIndex="9" />
+                  <Label fx:id="LabelIdAnnonceur" text="LabelIdAnnonceur" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="LabelNom" text="LabelNom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="LabelTelephone" text="LabelTelephone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="LabelEmail" text="LabelEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="LabelLieuNom" text="LabelLieuNom" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="LabelLieuAdresse" text="LabelLieuAdresse" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="LabelLieuCp" text="LabelLieuCp" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="LabelLieuVille" text="LabelLieuVille" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label fx:id="LabelSiteWeb" text="LabelSiteWeb" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label text="Solde" />
+                  <Label fx:id="LabelSolde" text="Solde" textFill="#1e0079" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="91.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1009.0" minWidth="10.0" prefWidth="1009.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutX="217.0" layoutY="28.0" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="28.0" minWidth="-Infinity" prefHeight="15.0" prefWidth="367.0" styleClass="titre-vue" text="Annonceurs" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="28.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="102.0" layoutY="514.0" prefHeight="60.0" prefWidth="597.0" spacing="10.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="102.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doActualiser" text="Actualiser" />
+            <Button mnemonicParsing="false" onAction="#doAjouter" text="Ajouter" />
+            <Button fx:id="buttonModifier" disable="true" mnemonicParsing="false" onAction="#doModifier" text="Modifier" />
+            <Button fx:id="buttonSupprimer" disable="true" mnemonicParsing="false" onAction="#doSupprimer" text="Supprimer" />
+            <Button fx:id="buttonMouvement" disable="true" mnemonicParsing="false" onAction="#doMouvement" text="mouvement" />
+            <Button fx:id="buttonListeMouvement" disable="true" mnemonicParsing="false" onAction="#doListeMouvement" text="Liste Mouvement" />
+         </children>
+      </HBox>
+      <HBox layoutX="22.0" layoutY="22.0" prefHeight="39.0" prefWidth="109.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+            <Button mnemonicParsing="false" onAction="#doRetourMenuAnnonceur" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

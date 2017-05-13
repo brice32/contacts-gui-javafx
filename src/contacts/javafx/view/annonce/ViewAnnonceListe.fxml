@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.annonce.ControllerAnnonceListe">
+   <children>
+      <HBox layoutX="32.0" layoutY="32.0" prefHeight="39.0" prefWidth="109.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+            <Button mnemonicParsing="false" onAction="#doRetourMenuAnnonce" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="227.0" layoutY="38.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="206.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="28.0" minWidth="-Infinity" prefHeight="15.0" prefWidth="367.0" styleClass="titre-vue" text="Annonce" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="28.0" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableViewAnnonce" layoutX="11.0" layoutY="91.0" prefHeight="411.0" prefWidth="778.0" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="91.0">
+        <columns>
+          <TableColumn fx:id="titreColumn" prefWidth="166.0" text="Title" />
+          <TableColumn fx:id="annonceurColumn" prefWidth="161.0" text="Annonceur" />
+            <TableColumn fx:id="categorieColumn" prefWidth="170.0" text="Catégorie" />
+            <TableColumn fx:id="zoneColumn" prefWidth="165.0" text="Zone" />
+            <TableColumn fx:id="statutColumn" prefWidth="114.0" text="Statute" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="154.0" layoutY="531.0" prefHeight="40.0" prefWidth="513.0" spacing="10.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="133.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Creer" />
+            <Button mnemonicParsing="false" onAction="#doModifier" prefHeight="40.0" prefWidth="120.0" text="Modifier" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Supprimer" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Réviser" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.mouvement.ControllerMouvement">
+   <children>
+      <Label alignment="CENTER" styleClass="titre-vue" text="Mouvement Finance" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="-6.0" layoutY="64.0" prefHeight="365.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Pane prefHeight="452.0" prefWidth="420.0">
+               <children>
+                  <Label layoutY="51.0" text="Annonceur :" />
+                  <Label layoutY="150.0" text="Montant :" />
+                  <TextField fx:id="textFieldMontant" layoutX="110.0" layoutY="140.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="189.0" text="Libelle :" />
+                  <TextField fx:id="textFieldLibelle" layoutX="110.0" layoutY="179.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="222.0" text="Description :" />
+                  <HBox alignment="CENTER" layoutX="180.0" layoutY="361.0" prefHeight="60.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="buttonAjouter" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#doAjouter" prefHeight="25.0" prefWidth="60.0" text="OK" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="textAreaDescription" layoutX="110.0" layoutY="218.0" prefHeight="143.0" prefWidth="200.0" />
+                  <ComboBox fx:id="comboBoxFXAnnonceur" layoutX="110.0" layoutY="45.0" prefHeight="39.0" prefWidth="200.0" />
+                  <Label layoutY="103.0" text="Solde :" />
+                  <Label fx:id="labelSolde" layoutX="112.0" layoutY="97.0" prefHeight="27.0" prefWidth="137.0" textFill="#23018a">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+      <Button alignment="TOP_LEFT" layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+   </children>
+</AnchorPane>

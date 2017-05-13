@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="1200.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.annonce.ControllerAnnonceForm">
+   <children>
+      <GridPane layoutX="35.0" layoutY="17.0" prefHeight="1095.0" prefWidth="731.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="177.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="565.0" minWidth="10.0" prefWidth="554.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Annonceur:" />
+            <Label text="Catégorie:" GridPane.rowIndex="1" />
+            <Label text="Rubrique:" GridPane.rowIndex="2" />
+            <Label text="Zone:" GridPane.rowIndex="3" />
+            <Label text="Titre:" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="TOP" text="Description:" GridPane.rowIndex="5" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Heure de début:" GridPane.rowIndex="6" />
+            <Label text="Heure de fin:" GridPane.rowIndex="7" />
+            <Label text="Adresse:" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" text="Lieu Nom:" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" text="Lieu Adresse:" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" text="Lieu CP:" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" text="Lieu Ville:" GridPane.halignment="RIGHT" GridPane.rowIndex="12">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label text="Organisateur:" GridPane.rowIndex="13" />
+            <Label text="Nom:" GridPane.halignment="RIGHT" GridPane.rowIndex="14">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label text="Site Web:" GridPane.halignment="RIGHT" GridPane.rowIndex="15">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label text="Email:" GridPane.halignment="RIGHT" GridPane.rowIndex="16">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Label text="Telephone:" GridPane.halignment="RIGHT" GridPane.rowIndex="17">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <ComboBox prefWidth="300.0" GridPane.columnIndex="1" />
+            <ComboBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <JFXDatePicker />
+                  <JFXTimePicker />
+               </children>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="554.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <JFXDatePicker prefHeight="16.0" prefWidth="183.0" />
+                  <JFXTimePicker />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="255.0" layoutY="935.0" prefHeight="39.0" prefWidth="270.0" spacing="50.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="255.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="120.0" text="OK" />
+            <Button mnemonicParsing="false" prefWidth="120.0" text="Annuler" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

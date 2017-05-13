@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="200.0" prefHeight="350.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.zone.ControllerZoneListe">
+   <children>
+      <Label layoutX="154.0" layoutY="31.0" text="Liste Des Zones" />
+      <ListView fx:id="listViewZones" layoutX="80.0" layoutY="68.0" prefHeight="200.0" prefWidth="232.0" />
+      <Button layoutX="54.0" layoutY="294.0" mnemonicParsing="false" onAction="#doActualiser" text="Actualiser" />
+      <Button layoutX="141.0" layoutY="294.0" mnemonicParsing="false" onAction="#doAjouter" text="Ajouter" />
+      <Button fx:id="Modifier" disable="true" layoutX="207.0" layoutY="294.0" mnemonicParsing="false" onAction="#doModifier" text="Modifier" />
+      <Button fx:id="Supprimer" disable="true" layoutX="277.0" layoutY="294.0" mnemonicParsing="false" onAction="#doSupprimer" text="Supprimer" />
+      <HBox layoutX="22.0" layoutY="22.0" prefHeight="39.0" prefWidth="109.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+            <Button mnemonicParsing="false" onAction="#doRetourMenuConfiguration" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

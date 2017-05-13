@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.annonceur.ControllerAnnonceurForm">
+   <children>
+      <Label alignment="CENTER" styleClass="titre-vue" text="Annonceur" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="-6.0" layoutY="64.0" prefHeight="365.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Pane prefHeight="452.0" prefWidth="420.0">
+               <children>
+                  <Label layoutY="20.0" text="IdAnnonceur : :" />
+                  <TextField fx:id="textFieldIdAnnonceur" editable="false" focusTraversable="false" layoutX="110.0" layoutY="10.0" prefHeight="25.0" prefWidth="100.0" />
+                  <Label layoutY="51.0" text="Nom :" />
+                  <TextField fx:id="textFieldNom" layoutX="110.0" layoutY="41.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="83.0" text="Telephone :" />
+                  <TextField fx:id="textFieldTelephone" layoutX="110.0" layoutY="73.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="117.0" text="Emial :" />
+                  <TextField fx:id="textFieldEmail" layoutX="110.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="150.0" text="Lieu Nom :" />
+                  <TextField fx:id="textFieldLieuNom" layoutX="110.0" layoutY="140.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="189.0" text="Lieu Adresse :" />
+                  <TextField fx:id="textFieldLieuAdresse" layoutX="110.0" layoutY="179.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="222.0" text="Lieu Cp :" />
+                  <TextField fx:id="textFieldLieuCp" layoutX="110.0" layoutY="212.0" prefHeight="25.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" layoutX="110.0" layoutY="357.0" prefHeight="60.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#doValider" prefHeight="25.0" prefWidth="60.0" text="OK" />
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#doAnnuler" text="Annuler" />
+                     </children>
+                  </HBox>
+                  <Label layoutY="256.0" text="Lieu Ville :" />
+                  <TextField fx:id="textFieldLieuVille" layoutX="110.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutY="289.0" text="Site Web :" />
+                  <TextField fx:id="textFieldSiteWeb" layoutX="110.0" layoutY="283.0" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+      <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#doRetour" text="Retour" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.annonceur.ControllerAnnonceurMouvementListe">
+   <children>
+      <GridPane layoutX="483.0" layoutY="15.0" prefHeight="370.0" prefWidth="310.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="118.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="192.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="idMouvement" />
+            <Label text="montant" GridPane.rowIndex="1" />
+            <Label text="date" GridPane.rowIndex="2" />
+            <Label text="heure" GridPane.rowIndex="3" />
+            <Label text="solde" GridPane.rowIndex="4" />
+            <Label text="libelle" GridPane.rowIndex="5" />
+            <Label text="description" GridPane.rowIndex="6" />
+            <Label fx:id="idMouvementLabel" text="idMouvement" GridPane.columnIndex="1" />
+            <Label fx:id="montantLabel" text="montant" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="dateLabel" text="date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="heureLabel" text="heure" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="soldeLabel" text="solde" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="libelleLabel" text="libelle" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextArea fx:id="descriptionTextArea" prefHeight="200.0" prefWidth="200.0" text="&#10;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tableViewMouvement" layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="469.0">
+        <columns>
+          <TableColumn fx:id="montantColumn" prefWidth="81.0" text="Montant" />
+            <TableColumn fx:id="dateColumn" prefWidth="91.0" text="Date" />
+            <TableColumn fx:id="heureColumn" prefWidth="75.0" text="Heure" />
+            <TableColumn fx:id="soldeColumn" prefWidth="75.0" text="Solde" />
+            <TableColumn fx:id="libelleColumn" prefWidth="145.0" text="Libelle" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
