@@ -25,11 +25,12 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/~libraries/mapstruct/mapstruct-processor-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="/~libraries/mapstruct/mapstruct-jdk8-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/wangyc/Desktop/projet/~libraries/jfoenix/jfoenix.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wangy/git/contacts-librarie/jfoenix/jfoenix.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/~libraries/JDBC-Drivers/mysql-connector-java-5.1.39-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
